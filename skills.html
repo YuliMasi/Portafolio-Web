@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles_habillidades.css">
+</head>
+
+<body>
+    <!--Barra de arriba  -->
+    <nav>
+        <!-- Hace que se alinie el texto en  la derecha y horizontalmente -->
+        <div class="container2">
+            <div><a href="" class="logo">Yuliana Masis</a></div>
+        </div>
+        <div class="container">
+            <div><a href="./home.html" class="nav-item">Home</a></div>
+            <div><a href="./projects.html" class="nav-item">Projects</a></div>
+            <div><a href="./skills.html" class="nav-item">Skills</a></div>
+            <div><a href="./contact.html" class="nav-item">Contact</a></div>
+        </div>
+
+    </nav>
+    <section class="container_components">
+        <div class="text_parr">
+            <h1>Tecnologies and tools</h1>
+            <p><br>I use various open source technologies in my design, and I also have experience in the web and IT fields. I currently <br>
+                work with a few languages, but I'm learning more every day.I also have a soft skill that I possess: effective communication.<br><br><br></p>
+        </div>
+        <div class="container_rectangles">
+            <div class="rectangulos" id="contenedor-rectangulos"></div>
+
+            <script>/*Parte de JavaScript para poner las imágenes en los rectángulos*/
+                const imagenes = [/*Hace un arreglo con todas las imágenes use tanto a nivel local, como otra que estan en un repositorio de github*/
+                    { src: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/java.png", alt: "java" },
+                    { src: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/spring.png", alt: "spring" },
+                    { src: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png", alt: "python" },
+                    { src: "./img_conocimientos/krita.png", alt: "krita" },
+                    { src: "./img_conocimientos/inkscape.png", alt: "inkscape" },
+                    { src: "./img_conocimientos/mysql.png", alt: "mysql" },
+                    { src: "./img_conocimientos/mongo.png", alt: "mongo" },
+                    { src: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/postman.png", alt: "postman" },
+                    { src: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/html.png", alt: "html" },
+                    { src: "https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/css.png", alt: "css" },
+                    { src: "./img_conocimientos/gimp.png", alt: "gimp" },
+                    { src: "./img_conocimientos/kdenlive.png", alt: "kdenlive" },
+                    { src: "./img_conocimientos/scribus.png", alt: "scribus" }
+                ];
+
+                const contenedor = document.getElementById("contenedor-rectangulos");/*Busca la clase que tiene ese id*/
+
+                imagenes.forEach((imagen, index) => {/*Recorre el arreglo por medio de un forEach*/
+                    const rect = document.createElement("div");/*Crea un div vacío*/
+                    rect.classList.add("rectangulo");/*Añade una clase "rectángulo" a ese div creado*/
+
+                    const img = document.createElement("img");/*Crea una imagen con el mismo src y alt de la posición en la que está*/
+                    img.src = imagen.src;
+                    img.alt = imagen.alt;
+
+                    rect.appendChild(img);/*Inserta la imagen dentro del div*/
+                    contenedor.appendChild(rect);/*Mete la clase "rectángulo" en el contenedor*/
+
+                    /* Condicional para hacer el salto de linea (se recorre desde la posicion 0)*/
+                    if (index === 4 || index == 9) {
+                        const salto = document.createElement("div");
+                        salto.style.flexBasis = "100%"; /* fuerza un salto en flexbox */
+                        contenedor.appendChild(salto);
+                    }
+                });
+            </script>
+
+        </div>
+    </section>
+</body>
+
+</html>
